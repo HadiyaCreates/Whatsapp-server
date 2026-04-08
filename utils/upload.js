@@ -36,7 +36,8 @@ const USERNAME = process.env.DB_USERNAME;
 const PASSWORD = process.env.DB_PASSWORD;
 
 const storage = new GridFsStorage({
-  url: `mongodb+srv://${USERNAME}:${PASSWORD}@cluster0.lvw8k2n.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`,
+  // url: `mongodb+srv://${USERNAME}:${PASSWORD}@cluster0.lvw8k2n.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`,
+  url: `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@cluster0.lvw8k2n.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`,
   options: { useNewUrlParser: true, useUnifiedTopology: true },
   file: (req, file) => {
     // const allowedTypes = ['image/png', 'image/jpg', 'image/jpeg'];
